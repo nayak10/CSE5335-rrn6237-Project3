@@ -1,0 +1,60 @@
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+
+function showElements()
+{
+    var tym=0;
+    $('.myclass').each(function(){
+        tym+=500;
+        $(this).delay(tym).show();
+        
+    });
+}
+
+$("#getData").click(function() {
+  var i=0;
+  for (i=1; i<100; i++)
+    {  
+      
+  $.getJSON('/lotsofdata').done(function( data ) {
+  
+       i=i-1;
+       $("#id1").append("<br/><span class=&quot;myclass&quot;>" + data[i]+ "</span>"); 
+       showElements(); 
+     
+  });
+       }   
+});
+
+});
+
+</script>
+<style>
+
+.myclass{
+
+    display:none
+}
+
+</style>
+</head>
+<body>
+{% if name %}
+  <h1 style="color: black;"> Welcome {{ name }}!</h1>
+{% else %}
+  <h1>Wrong Data!</h1>
+{% endif %}
+
+<button id="getData"> Get Data </button>
+</body>
+
+<p id='id1'><br/>
+</p>
+
+
+
+</html>
