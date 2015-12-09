@@ -1,0 +1,12 @@
+flask==0.10.1
+Flask-SQLAlchemy==2.1
+gunicorn==19.3.0
+ipaddress==1.0.7
+ipython==3.2.0
+itsdangerous==0.24
+Jinja2==2.6
+psycopg2==2.6.1
+spyder==2.3.5.2
+SQLAlchemy==1.0.5
+virtualenv==13.1.2
+Werkzeug==0.8.3
